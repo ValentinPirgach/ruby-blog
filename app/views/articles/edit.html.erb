@@ -1,29 +1,3 @@
 <h1>Edit article</h1>
 
-<% if @article.errors.any? %>
-<h2>The folowing errors prevented the article from getting creaetd</h2>
-<ul>
-  <% @article.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
-
-<%= form_for @article do |f| %>
-  <p>
-    <div><%= f.label :title %></div>
-    <div><%= f.text_field :title %></div>
-  </p>
-
-  <p>
-    <div><%= f.label :description %></div>
-    <div><%= f.text_area :description %></div>
-  </p>
-
-  <%= f.submit %>
-
-<% end %>
-
-<p>
-<%= link_to "Back to article list", articles_path %>
-</p>
+<%= render 'form' %>
