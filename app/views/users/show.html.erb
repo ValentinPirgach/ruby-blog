@@ -8,6 +8,15 @@
 
 <h4 class="text-center"><%= @user.username %>'s articles:</h4>
 
-<%  @user.articles.each do |article| %>
+
+<div class="text-center">
+  <%= will_paginate @user_articles %>
+</div>
+
+<%  @user_articles.each do |article| %>
   <%= render 'articles/article', article: article %>
 <% end %>
+
+<div class="text-center">
+  <%= will_paginate @user_articles %>
+</div>

@@ -1,6 +1,14 @@
 
 <h1 class="text-center">Listing all articles</h1>
 
+<div class="text-center">
+  <%= will_paginate %>
+</div>
+
 <% @articles.each do |article| %>
   <%= render 'article', article: article %>
 <% end %>
+
+<div class="text-center">
+  <%= will_paginate %>
+</div>
