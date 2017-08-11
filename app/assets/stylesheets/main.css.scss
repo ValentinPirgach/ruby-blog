@@ -89,3 +89,19 @@
     }
   }
 }
+
+footer {
+  margin-top: 45px;
+  padding-top: 10px;
+  border-top: 1px #eaeaea solid;
+  color: #777;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  a {
+    &:hover {
+      color: #222;
+    }
+  }
+}
