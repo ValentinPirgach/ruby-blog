@@ -90,9 +90,22 @@
   }
 }
 
-.article-actions {
-  border-top: 1px #eaeaea solid;
-  padding-top: 15px;
+.article {
+  &-actions {
+    border-top: 1px #eaeaea solid;
+    padding-top: 15px;
+  }
+
+  &-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    padding-bottom: 15px;
+  }
+
+  &-body {
+    border-top: 1px #eaeaea solid;
+    padding: 20px 0;
+  }
 }
 
 .description {
