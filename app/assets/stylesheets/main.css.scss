@@ -141,3 +141,17 @@ footer {
     text-align: center;
   }
 }
+
+.badge {
+  background-color: #5cb85c;
+
+  a {
+    color: #000;
+    text-decoration: none;
+    text-shadow: none;
+  }
+}
+
+.input-checkbox input {
+  width: auto !important;
+}

@@ -1,0 +1,13 @@
+<h1 class="text-center">Listing all articles of "<%= @category.name %>" category</h1>
+
+<div class="text-center">
+  <%= will_paginate @category_articles %>
+</div>
+
+<% @category_articles.each do |article| %>
+  <%= render 'articles/article', article: article %>
+<% end %>
+
+<div class="text-center">
+  <%= will_paginate @category_articles %>
+</div>
