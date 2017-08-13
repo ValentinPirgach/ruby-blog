@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :require_admin, only: [:new, :create]
+  before_action :require_admin, only: [:new, :create, :edit, :update]
+  before_action :get_category, only: [:update, :edit, :show]
 
   def index
     @categories = Category.paginate(:page => params[:page], per_page: 5)
@@ -21,11 +22,25 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
     @category_articles = @category.articles.paginate(page: params[:page], per_page: 5)
   end
 
+  def edit
+  end
+
+  def update
+    if @category.update(category_params)
+      flash[:success] = "Category name was successfully updated"
+      redirect_to category_path(@category)
+    else
+      render :edit
+    end
+  end
+
   private
+    def get_category
+      @category = Category.find(params[:id])
+    end
 
     def category_params
       params.require(:category).permit(:name)
