@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = "Welcom to the alpha blog #{@user.username}"
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       render 'new'
