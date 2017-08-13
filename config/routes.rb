@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   delete 'login', to: 'sessions#destroy'
 
   resources :users, except: [:new]
+  resources :categories, except: [:destroy]
 end
