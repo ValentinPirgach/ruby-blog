@@ -1,7 +1,9 @@
 require "test_helper"
 
 class CreateCategoriesTest < ActionDispatch::IntegrationTest
+
   test "when get new category form and create category" do
+
     get new_category_path
     assert_template :new
     assert_difference 'Category.count', 1 do
@@ -14,6 +16,7 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
   end
 
   test "when invalid category submission result in failure" do
+
     get new_category_path
     assert_template :new
 
