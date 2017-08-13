@@ -2,7 +2,7 @@ require "test_helper"
 
 class CategoriesControllerTest < ActionController::TestCase
   def setup
-    @category = Category.new(name: "sports")
+    @category = Category.create(name: "sports")
     @user = User.create(username: "Jhon", email: "jhon@expample.com", password: "123123123", admin: true)
   end
 
@@ -13,12 +13,13 @@ class CategoriesControllerTest < ActionController::TestCase
 
   test "should get new" do
     session[:user_id] = @user.id
+
     get :new
     assert_response :success
   end
 
   test "should get show" do
-    get :new, params: { category: { id: @category.id } }
+    get :show, params: { id: @category.id }
     assert_response :success
   end
 
